@@ -11,8 +11,8 @@ class TaskRepository(private val dao: TaskDao) {
     val allTasks: Flow<List<Task>> = dao.getAllTasks()
         .map { list -> list.sortedWith(compareBy({ it.sortPriority() }, { it.effectiveDueAt })) }
 
-    suspend fun markDone(task: Task) {
-        dao.update(task.copy(lastDoneAt = System.currentTimeMillis(), snoozedUntil = 0L))
+    suspend fun markDone(task: Task, doneAtMillis: Long = System.currentTimeMillis()) {
+        dao.update(task.copy(lastDoneAt = doneAtMillis, snoozedUntil = 0L))
     }
 
     suspend fun snooze(task: Task, days: Int) {

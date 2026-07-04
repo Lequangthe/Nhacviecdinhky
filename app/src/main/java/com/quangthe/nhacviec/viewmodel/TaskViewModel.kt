@@ -63,9 +63,9 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
     private val _undoItems = MutableStateFlow<List<UndoItem>>(emptyList())
     val undoItems: StateFlow<List<UndoItem>> = _undoItems.asStateFlow()
 
-    fun markDoneWithUndo(task: Task) {
+    fun markDoneWithUndo(task: Task, doneAtMillis: Long = System.currentTimeMillis()) {
         val prev = task.lastDoneAt
-        markDone(task)
+        markDone(task, doneAtMillis)
         _undoItems.value = listOf(UndoItem(task, prev)) + _undoItems.value
     }
 
@@ -78,13 +78,13 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
         _undoItems.value = _undoItems.value - item
     }
 
-    fun markDone(task: Task) {
+    fun markDone(task: Task, doneAtMillis: Long = System.currentTimeMillis()) {
         viewModelScope.launch {
-            repository.markDone(task)
+            repository.markDone(task, doneAtMillis)
             if (task.recurrenceType != "ONE_SHOT") {
-                historyDao.insert(TaskHistory(taskId = task.id, doneAt = System.currentTimeMillis()))
+                historyDao.insert(TaskHistory(taskId = task.id, doneAt = doneAtMillis))
                 historyDao.trimForTask(task.id, 6)
-                val updated = task.copy(lastDoneAt = System.currentTimeMillis(), snoozedUntil = 0L)
+                val updated = task.copy(lastDoneAt = doneAtMillis, snoozedUntil = 0L)
                 NotificationScheduler.scheduleForTask(getApplication(), updated)
             } else {
                 NotificationScheduler.cancelForTask(getApplication(), task.id)
@@ -102,13 +102,14 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
         weekDays: Int = 0,
         monthDays: Int = 0,
         isDisabled: Boolean = false,
-        targetDate: Long = 0L
+        targetDate: Long = 0L,
+        lastDoneAtMillis: Long = System.currentTimeMillis()
     ) {
         viewModelScope.launch {
             val newTask = Task(
                 title          = title,
                 intervalDays   = intervalDays,
-                lastDoneAt     = if (recurrenceType == "ONE_SHOT") 0L else System.currentTimeMillis(),
+                lastDoneAt     = if (recurrenceType == "ONE_SHOT") 0L else lastDoneAtMillis,
                 iconKey        = iconKey,
                 note           = note,
                 recurrenceType = recurrenceType,

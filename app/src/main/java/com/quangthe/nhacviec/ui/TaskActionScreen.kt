@@ -19,11 +19,17 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Alarm
+import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Today
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.DatePicker
+import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -34,9 +40,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -46,6 +54,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import com.quangthe.nhacviec.R
 import com.quangthe.nhacviec.data.Task
 import com.quangthe.nhacviec.data.recurrenceLabel
@@ -64,6 +75,9 @@ fun TaskActionScreen(
     var task       by remember { mutableStateOf<Task?>(null) }
     var loading    by remember { mutableStateOf(true) }
     var showSnooze by remember { mutableStateOf(false) }
+    var showDoneDialog by remember { mutableStateOf(false) }
+    var showDoneDatePicker by remember { mutableStateOf(false) }
+    var pendingDoneDate by remember { mutableLongStateOf(0L) }
 
     LaunchedEffect(taskId) {
         task = viewModel.getTaskById(taskId)
@@ -88,6 +102,58 @@ fun TaskActionScreen(
             onSnoozeUntil = { millis -> viewModel.snoozeUntil(t, millis); onBack() },
             onDismiss     = { showSnooze = false }
         )
+    }
+
+    if (showDoneDialog) {
+        AlertDialog(
+            onDismissRequest = { showDoneDialog = false },
+            title = { Text(stringResource(R.string.action_done_title)) },
+            text = {
+                Column {
+                    TextButton(
+                        onClick = { pendingDoneDate = 0L; showDoneDialog = false; viewModel.markDoneWithUndo(t); onBack() },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Icon(Icons.Filled.Today, null, modifier = Modifier.size(20.dp))
+                        Spacer(Modifier.width(12.dp))
+                        Text(stringResource(R.string.action_done_today))
+                    }
+                    HorizontalDivider()
+                    TextButton(
+                        onClick = { showDoneDialog = false; pendingDoneDate = System.currentTimeMillis(); showDoneDatePicker = true },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Icon(Icons.Filled.CalendarMonth, null, modifier = Modifier.size(20.dp))
+                        Spacer(Modifier.width(12.dp))
+                        Text(stringResource(R.string.action_done_other_date))
+                    }
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showDoneDialog = false }) { Text(stringResource(R.string.btn_cancel)) }
+            }
+        )
+    }
+
+    if (showDoneDatePicker) {
+        val state = rememberDatePickerState(
+            initialSelectedDateMillis = pendingDoneDate
+        )
+        DatePickerDialog(
+            onDismissRequest = { showDoneDatePicker = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    state.selectedDateMillis?.let { selected ->
+                        viewModel.markDoneWithUndo(t, selected)
+                    }
+                    showDoneDatePicker = false
+                    onBack()
+                }) { Text(stringResource(R.string.btn_ok)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDoneDatePicker = false }) { Text(stringResource(R.string.btn_cancel)) }
+            }
+        ) { DatePicker(state = state) }
     }
 
     Scaffold(
@@ -168,7 +234,7 @@ fun TaskActionScreen(
                     Text(stringResource(R.string.action_snooze))
                 }
                 Button(
-                    onClick = { viewModel.markDoneWithUndo(t); onBack() },
+                    onClick = { showDoneDialog = true },
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(Icons.Filled.CheckCircle, null, modifier = Modifier.size(20.dp))

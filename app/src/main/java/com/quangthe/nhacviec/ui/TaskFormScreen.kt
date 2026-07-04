@@ -153,22 +153,30 @@ private fun TaskFormContent(
     var isDisabled     by remember { mutableStateOf(task?.isDisabled ?: false) }
     var oneShotHasDate by remember { mutableStateOf(task?.targetDate?.let { it > 0L } ?: false) }
     var targetDate     by remember { mutableLongStateOf(task?.targetDate ?: 0L) }
+    var lastDoneDate   by remember { mutableLongStateOf(
+        if (task == null || task.recurrenceType == "ONE_SHOT" || task.lastDoneAt == 0L)
+            System.currentTimeMillis() else task.lastDoneAt
+    ) }
     var showDatePicker by remember { mutableStateOf(false) }
+    var showLastDonePicker by remember { mutableStateOf(false) }
     var showDeleteConfirm by remember { mutableStateOf(false) }
     var showHistory    by remember { mutableStateOf(false) }
     var showDiscardConfirm by remember { mutableStateOf(false) }
 
     // Le formulaire a-t-il été modifié par rapport à son état initial ?
+    val initialLastDone = if (task == null || task.recurrenceType == "ONE_SHOT" || task.lastDoneAt == 0L)
+        System.currentTimeMillis() else task.lastDoneAt
     val hasChanges = if (task == null) {
         title.isNotBlank() || intervalText.isNotBlank() || selectedIcon.isNotEmpty() ||
             note.isNotBlank() || recurrenceType != "DAYS" || weekDays != 0 || monthDays != 0 ||
-            isDisabled || oneShotHasDate || targetDate != 0L
+            isDisabled || oneShotHasDate || targetDate != 0L || lastDoneDate != initialLastDone
     } else {
         title != task.title || selectedIcon != task.iconKey || note != task.note ||
             recurrenceType != task.recurrenceType || weekDays != task.weekDays ||
             monthDays != task.monthDays || isDisabled != task.isDisabled ||
             oneShotHasDate != (task.targetDate > 0L) || targetDate != task.targetDate ||
-            (recurrenceType == "DAYS" && intervalText != task.intervalDays.toString())
+            (recurrenceType == "DAYS" && intervalText != task.intervalDays.toString()) ||
+            (recurrenceType != "ONE_SHOT" && lastDoneDate != initialLastDone)
     }
 
     // Retour demandé : confirme si saisies en cours, sinon quitte directement.
@@ -197,13 +205,15 @@ private fun TaskFormContent(
         if (task == null) {
             viewModel.addTask(
                 title.trim(), days, selectedIcon, note.trim(),
-                recurrenceType, weekDays, monthDays, isDisabled, targetDate
+                recurrenceType, weekDays, monthDays, isDisabled, targetDate,
+                lastDoneAtMillis = if (recurrenceType == "ONE_SHOT") System.currentTimeMillis() else lastDoneDate
             )
         } else {
             viewModel.updateTask(task.copy(
                 title = title.trim(), intervalDays = days, iconKey = selectedIcon, note = note.trim(),
                 recurrenceType = recurrenceType, weekDays = weekDays, monthDays = monthDays,
-                isDisabled = isDisabled, targetDate = targetDate
+                isDisabled = isDisabled, targetDate = targetDate,
+                lastDoneAt = if (recurrenceType == "ONE_SHOT") task.lastDoneAt else lastDoneDate
             ))
         }
         dismissAndBack()
@@ -272,6 +282,24 @@ private fun TaskFormContent(
             },
             dismissButton = {
                 TextButton(onClick = { showDatePicker = false }) { Text(stringResource(R.string.btn_cancel)) }
+            }
+        ) { DatePicker(state = state) }
+    }
+
+    if (showLastDonePicker) {
+        val state = rememberDatePickerState(
+            initialSelectedDateMillis = lastDoneDate
+        )
+        DatePickerDialog(
+            onDismissRequest = { showLastDonePicker = false },
+            confirmButton = {
+                TextButton(onClick = {
+                    state.selectedDateMillis?.let { lastDoneDate = it }
+                    showLastDonePicker = false
+                }) { Text(stringResource(R.string.btn_ok)) }
+            },
+            dismissButton = {
+                TextButton(onClick = { showLastDonePicker = false }) { Text(stringResource(R.string.btn_cancel)) }
             }
         ) { DatePicker(state = state) }
     }
@@ -518,6 +546,21 @@ private fun TaskFormContent(
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.primary
                     )
+                }
+            }
+
+            // ── Lần cuối làm ─────────────────────────────────────────────
+            if (recurrenceType != "ONE_SHOT") {
+                Text(stringResource(R.string.form_last_done_label), style = MaterialTheme.typography.labelMedium)
+                Box(modifier = Modifier.fillMaxWidth().clickable { showLastDonePicker = true }) {
+                    OutlinedTextField(
+                        value = formatDate(lastDoneDate),
+                        onValueChange = {},
+                        readOnly = true,
+                        trailingIcon = { Icon(Icons.Filled.DateRange, contentDescription = null) },
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Box(modifier = Modifier.matchParentSize().clickable { showLastDonePicker = true })
                 }
             }
 

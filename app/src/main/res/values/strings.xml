@@ -85,6 +85,7 @@
     <string name="form_oneshot_fixed_date">Fixed date</string>
     <string name="form_due_date_label">Due date</string>
     <string name="form_icon_label">Icon</string>
+    <string name="form_last_done_label">Last done on</string>
     <string name="form_delete_title">Delete task</string>
     <string name="form_delete_message">Permanently delete \"%s\"?</string>
     <string name="form_discard_title">Leave without saving?</string>
@@ -108,6 +109,9 @@
 
     <!-- Task actions screen (opened from the widget) -->
     <string name="action_done">Done</string>
+    <string name="action_done_title">Mark as done</string>
+    <string name="action_done_today">Today</string>
+    <string name="action_done_other_date">Choose a date…</string>
     <string name="action_snooze">Snooze</string>
     <string name="action_edit">Edit</string>
 
