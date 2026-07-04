@@ -1,0 +1,3 @@
+* Reporter une tâche à une date précise : dans la fenêtre de report, touchez « Choisir une date… »
+* Une tâche reportée ne prévient plus que le jour choisi, sans notification anticipée J-1/J-3
+* Pratique pour une tâche en retard à faire samedi prochain, ou un rappel qui tombe pendant les vacances

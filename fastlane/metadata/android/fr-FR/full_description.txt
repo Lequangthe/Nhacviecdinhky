@@ -1,0 +1,18 @@
+MainTask vous aide à ne jamais oublier vos tâches récurrentes : vidange, contrôle technique, renouvellement d'assurance, changement de filtres, sauvegardes…
+
+Configurez chaque tâche avec son intervalle (tous les X jours, chaque semaine ou chaque mois) et MainTask vous prévient avant l'échéance.
+
+Fonctionnalités :
+
+* Tâches récurrentes : intervalles fixes, hebdomadaires ou mensuels
+* Tâches ponctuelles, avec ou sans date cible
+* Historique des réalisations pour chaque tâche
+* Notifications personnalisables (3 jours ou 1 jour avant, à l'heure de votre choix)
+* Boutons « Fait » et « Reporter » directement dans les notifications
+* Widget scrollable sur l'écran d'accueil
+* Tuile dans les réglages rapides
+* 5 thèmes de couleurs + mode sombre
+* Export / import de sauvegarde (historique inclus)
+* Disponible en français et en anglais
+
+Respectueux de la vie privée : aucune publicité, aucun pisteur, aucun compte. Tout reste sur votre appareil.

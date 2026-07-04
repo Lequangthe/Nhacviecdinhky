@@ -1,0 +1,5 @@
+* Création et édition d'une tâche en plein écran
+* Majuscule automatique en début de phrase + touche « Suivant » dans le formulaire
+* Bouton « + » directement sur le widget de l'écran d'accueil
+* La liste reste désormais en place après avoir validé une tâche
+* Bouton « + » plus visible en thème sombre

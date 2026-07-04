@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Nhắc việc định kỳ</string>
+
+    <!-- TopBar / menu -->
+    <string name="menu_export">Export</string>
+    <string name="menu_import">Import</string>
+    <string name="menu_about">About</string>
+    <string name="menu_settings">Settings</string>
+    <string name="cd_menu">Menu</string>
+    <string name="cd_back">Back</string>
+    <string name="settings_section_backup">Backup</string>
+    <string name="notif_banner_message">Notifications are off</string>
+    <string name="notif_banner_action">Enable</string>
+    <string name="fab_new_task">New task</string>
+
+    <!-- Empty state -->
+    <string name="empty_title">No tasks</string>
+    <string name="empty_subtitle">Tap + to create your first task</string>
+
+    <!-- Section -->
+    <string name="section_someday">Someday</string>
+
+    <!-- Category filter -->
+    <string name="filter_all">All</string>
+
+    <!-- Toasts -->
+    <string name="toast_export_success">Backup exported</string>
+    <string name="toast_export_error">Export failed</string>
+    <string name="toast_import_success">Import successful</string>
+    <string name="toast_file_invalid">Invalid file</string>
+    <string name="toast_import_version_error">Unsupported backup format</string>
+
+    <!-- About dialog -->
+    <string name="about_title">About</string>
+    <string name="about_section_theme">Theme</string>
+    <string name="about_section_notifications">Notifications</string>
+    <string name="about_advance_label">Early reminder</string>
+    <string name="about_advance_3days">3 days before</string>
+    <string name="about_advance_day_before">The day before</string>
+    <string name="about_hour_label">Notification time</string>
+    <string name="about_author">Author: Lê Quang Thế (0387220880)</string>
+    <string name="about_version">Version: %s</string>
+    <string name="about_license">License: GPLv3 — free software</string>
+    <string name="about_close">Close</string>
+
+    <!-- Import dialog -->
+    <string name="import_dialog_title">Import backup</string>
+    <string name="import_dialog_message">This file contains %d task(s).\nCurrent tasks will be replaced.</string>
+
+    <!-- Common buttons -->
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_import">Import</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_ok">OK</string>
+
+    <!-- Undo snackbar -->
+    <string name="undo_label">Undo</string>
+
+    <!-- Snooze dialog -->
+    <string name="snooze_title">Snooze task</string>
+    <string name="snooze_days_label">Number of days</string>
+    <string name="snooze_1_day">1 day</string>
+    <string name="snooze_3_days">3 days</string>
+    <string name="snooze_7_days">7 days</string>
+    <string name="snooze_14_days">14 days</string>
+    <string name="snooze_other">Other…</string>
+    <string name="snooze_pick_date">Pick a date…</string>
+
+    <!-- Task form -->
+    <string name="form_new_task">New task</string>
+    <string name="form_edit_task">Edit task</string>
+    <string name="form_title_label">Title</string>
+    <string name="form_note_label">Note (optional)</string>
+    <string name="form_recurrence_label">Recurrence</string>
+    <string name="form_recurrence_days">Days</string>
+    <string name="form_recurrence_weekly">Weekly</string>
+    <string name="form_recurrence_monthly">Monthly</string>
+    <string name="form_recurrence_oneshot">One-off</string>
+    <string name="form_interval_label">Interval</string>
+    <string name="form_interval_unit">days</string>
+    <string name="form_oneshot_someday">Someday</string>
+    <string name="form_oneshot_fixed_date">Fixed date</string>
+    <string name="form_due_date_label">Due date</string>
+    <string name="form_icon_label">Icon</string>
+    <string name="form_delete_title">Delete task</string>
+    <string name="form_delete_message">Permanently delete \"%s\"?</string>
+    <string name="form_discard_title">Leave without saving?</string>
+    <string name="form_discard_message">Your unsaved changes will be lost.</string>
+    <string name="btn_discard">Leave</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_delete">Delete</string>
+    <string name="cd_pause">Pause</string>
+    <string name="cd_resume">Resume</string>
+    <string name="cd_paused">Paused</string>
+    <string name="cd_note">Note</string>
+    <string name="cd_snooze">Snooze</string>
+    <string name="cd_mark_done">Mark as done</string>
+    <string name="cd_history">Show history</string>
+
+    <!-- History dialog -->
+    <string name="history_title">History</string>
+    <string name="history_empty">No completions recorded yet</string>
+    <string name="history_done_on">%s</string>
+
+    <!-- Task actions screen (opened from the widget) -->
+    <string name="action_done">Done</string>
+    <string name="action_snooze">Snooze</string>
+    <string name="action_edit">Edit</string>
+
+    <!-- About — share & QR -->
+    <string name="about_section_share">Share app</string>
+    <string name="about_qr_tap_hint">Tap to maximize brightness</string>
+    <string name="about_share_btn">Share link</string>
+    <string name="about_share_text">Check out Nhacviec, the free recurring task reminder app:\nhttps://github.com/Lequangthe/Nhacviecdinhky</string>
+
+    <!-- Task status subtitles -->
+    <string name="status_paused">Paused</string>
+    <string name="status_someday">Someday</string>
+    <string name="status_done_days">Done · deletes in %d days</string>
+    <string name="status_done_tomorrow">Done · deletes tomorrow</string>
+    <string name="status_done_today">Done · deletes today</string>
+    <string name="status_snoozed_tomorrow">Snoozed — tomorrow · %s</string>
+    <string name="status_snoozed_days">Snoozed — in %1$d days · %2$s</string>
+    <string name="status_overdue_days">%1$d days overdue · %2$s</string>
+    <string name="status_overdue_1day">1 day overdue · %1$s</string>
+    <string name="status_today">Due today · %1$s</string>
+    <string name="status_tomorrow">Tomorrow · %1$s</string>
+    <string name="status_in_days">In %1$d days · %2$s</string>
+
+    <!-- Recurrence labels (task card 3rd line) -->
+    <string name="rec_every_day">Every day</string>
+    <string name="rec_every_n_days">Every %d days</string>
+    <string name="rec_weekly">Every week</string>
+    <string name="rec_weekly_days">Weekly · %s</string>
+    <string name="rec_monthly">Every month</string>
+    <string name="rec_monthly_days">Monthly · %s</string>
+
+    <!-- Recurrence preview (form) -->
+    <string name="rec_preview_weekly">Every %s</string>
+    <string name="rec_preview_monthly">The %s of every month</string>
+    <string name="rec_preview_someday">Someday</string>
+    <string name="rec_preview_oneshot_date">One-off · %s</string>
+    <string name="rec_and">and</string>
+
+    <!-- Day names — picker buttons (3 chars) -->
+    <string name="day_mon">Mon</string>
+    <string name="day_tue">Tue</string>
+    <string name="day_wed">Wed</string>
+    <string name="day_thu">Thu</string>
+    <string name="day_fri">Fri</string>
+    <string name="day_sat">Sat</string>
+    <string name="day_sun">Sun</string>
+
+    <!-- Day short names indexed by Calendar.DAY_OF_WEEK (index 0 unused, 1=Sun…7=Sat) -->
+    <string-array name="day_short_names">
+        <item></item>
+        <item>Sun.</item>
+        <item>Mon.</item>
+        <item>Tue.</item>
+        <item>Wed.</item>
+        <item>Thu.</item>
+        <item>Fri.</item>
+        <item>Sat.</item>
+    </string-array>
+
+    <!-- Month day -->
+    <string name="month_first_ordinal">1st</string>
+    <string name="month_last_day">Last day</string>
+    <string name="month_last_day_short">last</string>
+
+    <!-- Icons -->
+    <string name="icon_moto">Motorbike</string>
+    <string name="icon_car">Car</string>
+    <string name="icon_bike">Bike</string>
+    <string name="icon_security">Security</string>
+    <string name="icon_home">Home</string>
+    <string name="icon_health">Health</string>
+    <string name="icon_pets">Pet</string>
+    <string name="icon_garden">Garden</string>
+    <string name="icon_shopping">Shopping</string>
+    <string name="icon_work">Work</string>
+    <string name="icon_sport">Sport</string>
+    <string name="icon_hobby">Hobby</string>
+    <string name="icon_tools">Tools</string>
+    <string name="icon_admin">Admin</string>
+    <string name="icon_other">Other</string>
+
+    <!-- Theme names -->
+    <string name="theme_azure_clair">Light Azure</string>
+    <string name="theme_cobalt_pro">Cobalt Pro</string>
+    <string name="theme_nuit_electrique">Electric Night</string>
+    <string name="theme_sarcelle_douce">Soft Teal</string>
+    <string name="theme_dynamique">Dynamic (Android 12+)</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Nhacviec Reminders</string>
+    <string name="notification_channel_description">Reminders for recurring tasks</string>
+    <string name="notification_body_3days">Due in 3 days</string>
+    <string name="notification_body_tomorrow">Due tomorrow</string>
+    <string name="notification_body_today">Due today</string>
+    <string name="notif_action_done">Done</string>
+    <string name="notif_action_snooze">Snooze +1d</string>
+
+    <!-- Tile -->
+    <string name="tile_overdue">%d overdue</string>
+    <string name="tile_up_to_date">Up to date</string>
+
+    <!-- Widget -->
+    <string name="widget_no_tasks">No upcoming tasks</string>
+    <string name="widget_overdue">Overdue · %s</string>
+    <string name="widget_today">Today · %s</string>
+    <string name="widget_tomorrow">Tomorrow · %s</string>
+    <string name="widget_in_days">In %1$d days · %2$s</string>
+</resources>

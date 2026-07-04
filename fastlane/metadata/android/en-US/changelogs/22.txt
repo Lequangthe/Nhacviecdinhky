@@ -1,0 +1,5 @@
+* English is now the default language (French is used on French-language devices)
+* New action screen when tapping a task in the widget: Done / Snooze / Edit
+* Fixed the keyboard hiding the bottom of the task form
+* Removed the "network connections" permission (it was unused)
+* Smoother predictive back gesture on Android 13+

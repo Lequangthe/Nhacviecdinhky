@@ -1,0 +1,18 @@
+MainTask helps you never forget your recurring tasks: oil changes, vehicle inspection, insurance renewal, filter changes, backups…
+
+Set each task with its interval (every X days, weekly or monthly) and MainTask reminds you before it's due.
+
+Features:
+
+* Recurring tasks: fixed intervals, weekly or monthly
+* One-shot tasks, with or without a target date
+* Completion history for each task
+* Customizable notifications (3 days or 1 day before, at the time you choose)
+* "Done" and "Snooze" buttons right inside notifications
+* Scrollable home screen widget
+* Quick Settings tile
+* 5 color themes + dark mode
+* Backup export / import (history included)
+* Available in English and French
+
+Privacy-friendly: no ads, no trackers, no account. Everything stays on your device.

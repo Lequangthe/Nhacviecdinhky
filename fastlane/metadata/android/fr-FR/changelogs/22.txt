@@ -1,0 +1,5 @@
+* L'anglais devient la langue par défaut (le français reste sur les appareils en français)
+* Nouvel écran d'actions au tap d'une tâche du widget : Fait / Reporter / Modifier
+* Correction du clavier qui masquait le bas du formulaire
+* Permission « connexions réseau » retirée (elle était inutilisée)
+* Geste de retour prédictif plus fluide sur Android 13+

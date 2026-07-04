@@ -1,0 +1,5 @@
+* Full-screen task creation and editing
+* Automatic capital first letter + "Next" key in the form
+* "+" button right on the home screen widget
+* The list now stays in place after completing a task
+* More visible "+" button in dark theme

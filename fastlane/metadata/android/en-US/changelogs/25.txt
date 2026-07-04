@@ -1,0 +1,3 @@
+* Postpone a task to a specific date: in the snooze dialog, tap "Pick a date…"
+* A postponed task now reminds you on the chosen day only, with no early J-1/J-3 notification
+* Handy for overdue tasks you'll do next Saturday, or reminders that land during holidays

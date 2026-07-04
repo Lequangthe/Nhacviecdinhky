@@ -1,0 +1,4 @@
+* Filter tasks by category (icon): a chip bar appears when your list is long and varied enough
+* The "All" chip stays pinned; the others scroll horizontally with a soft fading edge
+* Confirmation prompt before leaving the task form with unsaved changes
+* Smoother back navigation when the keyboard is open

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Nhắc việc định kỳ</string>
+
+    <!-- TopBar / menu -->
+    <string name="menu_export">Xuất dữ liệu</string>
+    <string name="menu_import">Nhập dữ liệu</string>
+    <string name="menu_about">Giới thiệu</string>
+    <string name="menu_settings">Cài đặt</string>
+    <string name="cd_menu">Danh mục</string>
+    <string name="cd_back">Quay lại</string>
+    <string name="settings_section_backup">Sao lưu</string>
+    <string name="notif_banner_message">Thông báo đang tắt</string>
+    <string name="notif_banner_action">Bật</string>
+    <string name="fab_new_task">Thêm việc mới</string>
+
+    <!-- Empty state -->
+    <string name="empty_title">Không có công việc nào</string>
+    <string name="empty_subtitle">Chạm vào + để tạo công việc đầu tiên</string>
+
+    <!-- Section -->
+    <string name="section_someday">Một ngày nào đó</string>
+
+    <!-- Category filter -->
+    <string name="filter_all">Tất cả</string>
+
+    <!-- Toasts -->
+    <string name="toast_export_success">Đã xuất bản sao lưu</string>
+    <string name="toast_export_error">Xuất dữ liệu thất bại</string>
+    <string name="toast_import_success">Nhập dữ liệu thành công</string>
+    <string name="toast_file_invalid">Tệp không hợp lệ</string>
+    <string name="toast_import_version_error">Định dạng sao lưu không hỗ trợ</string>
+
+    <!-- About dialog -->
+    <string name="about_title">Giới thiệu</string>
+    <string name="about_section_theme">Chủ đề</string>
+    <string name="about_section_notifications">Thông báo</string>
+    <string name="about_advance_label">Nhắc sớm</string>
+    <string name="about_advance_3days">Trước 3 ngày</string>
+    <string name="about_advance_day_before">Trước 1 ngày</string>
+    <string name="about_hour_label">Giờ thông báo</string>
+    <string name="about_author">Tác giả: Lê Quang Thế (0387220880)</string>
+    <string name="about_version">Phiên bản: %s</string>
+    <string name="about_license">Giấy phép: GPLv3 — phần mềm tự do</string>
+    <string name="about_close">Đóng</string>
+
+    <!-- Import dialog -->
+    <string name="import_dialog_title">Nhập bản sao lưu</string>
+    <string name="import_dialog_message">Tệp này chứa %d công việc.\nCác công việc hiện tại sẽ bị thay thế.</string>
+
+    <!-- Common buttons -->
+    <string name="btn_cancel">Hủy</string>
+    <string name="btn_confirm">Xác nhận</string>
+    <string name="btn_import">Nhập</string>
+    <string name="btn_delete">Xóa</string>
+    <string name="btn_ok">OK</string>
+
+    <!-- Undo snackbar -->
+    <string name="undo_label">Hoàn tác</string>
+
+    <!-- Snooze dialog -->
+    <string name="snooze_title">Tạm hoãn</string>
+    <string name="snooze_days_label">Số ngày</string>
+    <string name="snooze_1_day">1 ngày</string>
+    <string name="snooze_3_days">3 ngày</string>
+    <string name="snooze_7_days">7 ngày</string>
+    <string name="snooze_14_days">14 ngày</string>
+    <string name="snooze_other">Khác…</string>
+    <string name="snooze_pick_date">Chọn ngày…</string>
+
+    <!-- Task form -->
+    <string name="form_new_task">Việc mới</string>
+    <string name="form_edit_task">Sửa công việc</string>
+    <string name="form_title_label">Tiêu đề</string>
+    <string name="form_note_label">Ghi chú (tùy chọn)</string>
+    <string name="form_recurrence_label">Định kỳ</string>
+    <string name="form_recurrence_days">Ngày</string>
+    <string name="form_recurrence_weekly">Hàng tuần</string>
+    <string name="form_recurrence_monthly">Hàng tháng</string>
+    <string name="form_recurrence_oneshot">Một lần</string>
+    <string name="form_interval_label">Khoảng cách</string>
+    <string name="form_interval_unit">ngày</string>
+    <string name="form_oneshot_someday">Một ngày nào đó</string>
+    <string name="form_oneshot_fixed_date">Ngày cụ thể</string>
+    <string name="form_due_date_label">Hạn chót</string>
+    <string name="form_icon_label">Biểu tượng</string>
+    <string name="form_delete_title">Xóa công việc</string>
+    <string name="form_delete_message">Xóa vĩnh viễn \"%s\"?</string>
+    <string name="form_discard_title">Thoát mà không lưu?</string>
+    <string name="form_discard_message">Các thay đổi chưa lưu sẽ bị mất.</string>
+    <string name="btn_discard">Thoát</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_delete">Xóa</string>
+    <string name="cd_pause">Tạm dừng</string>
+    <string name="cd_resume">Tiếp tục</string>
+    <string name="cd_paused">Đã tạm dừng</string>
+    <string name="cd_note">Ghi chú</string>
+    <string name="cd_snooze">Tạm hoãn</string>
+    <string name="cd_mark_done">Đánh dấu hoàn thành</string>
+    <string name="cd_history">Xem lịch sử</string>
+
+    <!-- History dialog -->
+    <string name="history_title">Lịch sử</string>
+    <string name="history_empty">Chưa có ghi nhận hoàn thành</string>
+    <string name="history_done_on">%s</string>
+
+    <!-- Task actions screen (opened from the widget) -->
+    <string name="action_done">Xong</string>
+    <string name="action_snooze">Tạm hoãn</string>
+    <string name="action_edit">Sửa</string>
+
+    <!-- About — share & QR -->
+    <string name="about_section_share">Chia sẻ ứng dụng</string>
+    <string name="about_qr_tap_hint">Chạm để tăng độ sáng tối đa</string>
+    <string name="about_share_btn">Chia sẻ liên kết</string>
+    <string name="about_share_text">Thử Nhacviec, ứng dụng nhắc việc định kỳ miễn phí:\nhttps://github.com/Lequangthe/Nhacviecdinhky</string>
+
+    <!-- Task status subtitles -->
+    <string name="status_paused">Đã tạm dừng</string>
+    <string name="status_someday">Một ngày nào đó</string>
+    <string name="status_done_days">Xong · xóa sau %d ngày</string>
+    <string name="status_done_tomorrow">Xong · xóa vào ngày mai</string>
+    <string name="status_done_today">Xong · xóa vào hôm nay</string>
+    <string name="status_snoozed_tomorrow">Đã hoãn — đến ngày mai · %s</string>
+    <string name="status_snoozed_days">Đã hoãn — sau %1$d ngày · %2$s</string>
+    <string name="status_overdue_days">Quá hạn %1$d ngày · %2$s</string>
+    <string name="status_overdue_1day">Quá hạn 1 ngày · %1$s</string>
+    <string name="status_today">Hạn hôm nay · %1$s</string>
+    <string name="status_tomorrow">Ngày mai · %1$s</string>
+    <string name="status_in_days">Sau %1$d ngày · %2$s</string>
+
+    <!-- Recurrence labels (task card 3rd line) -->
+    <string name="rec_every_day">Mỗi ngày</string>
+    <string name="rec_every_n_days">Mỗi %d ngày</string>
+    <string name="rec_weekly">Mỗi tuần</string>
+    <string name="rec_weekly_days">Hàng tuần · %s</string>
+    <string name="rec_monthly">Mỗi tháng</string>
+    <string name="rec_monthly_days">Hàng tháng · %s</string>
+
+    <!-- Recurrence preview (form) -->
+    <string name="rec_preview_weekly">Mỗi %s</string>
+    <string name="rec_preview_monthly">Ngày %s hàng tháng</string>
+    <string name="rec_preview_someday">Một ngày nào đó</string>
+    <string name="rec_preview_oneshot_date">Một lần · %s</string>
+    <string name="rec_and">và</string>
+
+    <!-- Day names — picker buttons (3 chars) -->
+    <string name="day_mon">T2</string>
+    <string name="day_tue">T3</string>
+    <string name="day_wed">T4</string>
+    <string name="day_thu">T5</string>
+    <string name="day_fri">T6</string>
+    <string name="day_sat">T7</string>
+    <string name="day_sun">CN</string>
+
+    <!-- Day short names indexed by Calendar.DAY_OF_WEEK (index 0 unused, 1=Sun…7=Sat) -->
+    <string-array name="day_short_names">
+        <item></item>
+        <item>CN.</item>
+        <item>T2.</item>
+        <item>T3.</item>
+        <item>T4.</item>
+        <item>T5.</item>
+        <item>T6.</item>
+        <item>T7.</item>
+    </string-array>
+
+    <!-- Month day -->
+    <string name="month_first_ordinal">ngày 1</string>
+    <string name="month_last_day">Ngày cuối cùng</string>
+    <string name="month_last_day_short">cuối</string>
+
+    <!-- Icons -->
+    <string name="icon_moto">Xe máy</string>
+    <string name="icon_car">Ô tô</string>
+    <string name="icon_bike">Xe đạp</string>
+    <string name="icon_security">Bảo mật</string>
+    <string name="icon_home">Nhà cửa</string>
+    <string name="icon_health">Sức khỏe</string>
+    <string name="icon_pets">Thú cưng</string>
+    <string name="icon_garden">Sân vườn</string>
+    <string name="icon_shopping">Mua sắm</string>
+    <string name="icon_work">Công việc</string>
+    <string name="icon_sport">Thể thao</string>
+    <string name="icon_hobby">Sở thích</string>
+    <string name="icon_tools">Công cụ</string>
+    <string name="icon_admin">Hành chính</string>
+    <string name="icon_other">Khác</string>
+
+    <!-- Theme names -->
+    <string name="theme_azure_clair">Xanh da trời</string>
+    <string name="theme_cobalt_pro">Cobalt Pro</string>
+    <string name="theme_nuit_electrique">Đêm điện ảnh</string>
+    <string name="theme_sarcelle_douce">Mòng két dịu</string>
+    <string name="theme_dynamique">Năng động (Android 12+)</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Nhắc nhở Nhacviec</string>
+    <string name="notification_channel_description">Nhắc nhở cho các công việc định kỳ</string>
+    <string name="notification_body_3days">Đến hạn trong 3 ngày</string>
+    <string name="notification_body_tomorrow">Đến hạn vào ngày mai</string>
+    <string name="notification_body_today">Đến hạn vào hôm nay</string>
+    <string name="notif_action_done">Xong</string>
+    <string name="notif_action_snooze">Hoãn +1n</string>
+
+    <!-- Tile -->
+    <string name="tile_overdue">%d quá hạn</string>
+    <string name="tile_up_to_date">Đã cập nhật</string>
+
+    <!-- Widget -->
+    <string name="widget_no_tasks">Không có việc sắp tới</string>
+    <string name="widget_overdue">Quá hạn · %s</string>
+    <string name="widget_today">Hôm nay · %s</string>
+    <string name="widget_tomorrow">Ngày mai · %s</string>
+    <string name="widget_in_days">Sau %1$d ngày · %2$s</string>
+</resources>

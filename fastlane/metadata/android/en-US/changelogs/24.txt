@@ -1,0 +1,3 @@
+* More category icons: 6 to 15 (health, shopping, pet, garden, tools, hobby, sport, admin, work…)
+* Icon picker is now a tidy grid showing every icon at once, instead of a hidden horizontal scroll
+* Cleaner F-Droid listing (app icon and feature graphic)

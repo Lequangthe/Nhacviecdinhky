@@ -1,0 +1,3 @@
+* Plus d'icônes de catégorie : de 6 à 15 (santé, achat, animal, jardin, bricolage, loisirs, sport, administratif, travail…)
+* Le sélecteur d'icône affiche désormais toutes les icônes d'un coup en grille, au lieu d'un défilement horizontal masqué
+* Fiche F-Droid plus soignée (icône de l'app et bandeau)

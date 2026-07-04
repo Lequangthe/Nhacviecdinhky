@@ -1,0 +1,4 @@
+* Filtrer les tâches par catégorie (icône) : une barre de chips apparaît quand la liste est assez longue et variée
+* La chip « Toutes » reste épinglée ; les autres défilent horizontalement avec un fondu sur les bords
+* Confirmation avant de quitter le formulaire avec des saisies non enregistrées
+* Retour plus fluide lorsque le clavier est ouvert
